@@ -286,3 +286,11 @@
       visibility: hidden;
     }
   }
+.main-container {
+  display: flex;
+    justify-content: center;
+}  
+.sub-container {
+
+  width: 50%;
+}

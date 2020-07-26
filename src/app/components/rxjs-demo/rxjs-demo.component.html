@@ -1,0 +1,7 @@
+
+<div *ngIf="task$ | async as task">
+    <div *ngIf="!task.isErrorOccuredGettingTask ; else errorBlock">
+        show task details
+    </div>
+    <ng-template #errorBlock>Error occured.</ng-template>
+</div>    

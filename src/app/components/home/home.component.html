@@ -1,0 +1,8 @@
+<div class="main-container">
+    <div class="sub-container">
+<app-customer-details [name]="selectedCustomer"></app-customer-details>
+-----------------------------------------------------------------------------------------------
+<app-list (itemSelected)="selectCustomer($event)" [items]="customer$ | async"></app-list>
+</div>
+</div>
+
