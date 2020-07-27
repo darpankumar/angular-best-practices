@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-
-import {DataService} from './../../shared/data/data.service';
-import {DatePickerComponent} from './../../shared/date-picker/date-picker.component';
+import { DataService } from './../../shared/data/data.service';
+import { DatePickerComponent } from './../../shared/date-picker/date-picker.component';
 
 @Component({
   selector: 'app-home',
@@ -11,20 +10,16 @@ import {DatePickerComponent} from './../../shared/date-picker/date-picker.compon
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  customer$ : Observable<string[]>;
+  customer$: Observable<string[]>;
   selectedCustomer: string;
   component: DatePickerComponent;
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-
     this.customer$ = this.dataService.getCustomers();
   }
 
-  selectCustomer($event) {
-
+  selectCustomer($event): void {
     this.selectedCustomer = $event;
   }
-
 }

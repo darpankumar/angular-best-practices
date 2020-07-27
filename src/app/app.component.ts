@@ -1,36 +1,27 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import {UtilityService} from './shared/utility/utility.service';
+import { UtilityService } from './shared/utility/utility.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  changeDetection: ChangeDetectionStrategy.
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'demo-app';
-  employees$ : Observable<{id:number, name:string}[]> 
+  employees$: Observable<{ id: number; name: string }[]>;
 
-  constructor(private utilityService: UtilityService) {
+  constructor(private utilityService: UtilityService) {}
 
-    
-  }
-
-  getData() {
-
+  getData(): void {
     this.employees$ = this.utilityService.getDummyData();
-    
   }
 
-  getUpdateData() {
-
+  getUpdateData(): void {
     this.employees$ = this.utilityService.geUpdateData();
   }
 
-  trackByCustomerId(_, customer) {
-
+  trackByCustomerId(_, customer): number {
     return customer.id;
-
   }
 }
