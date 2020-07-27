@@ -16,3 +16,12 @@
 
 <!-- <app-clutter-home></app-clutter-home> -->
 <app-home></app-home>
+
+<button (click)="getData()">Show Customer</button>
+<button (click)="getUpdateData()">Add Customer</button>
+
+<div *ngFor="let employee of employees$ | async; trackBy:trackByCustomerId">
+   {{employee.name}}
+</div>
+
+  
